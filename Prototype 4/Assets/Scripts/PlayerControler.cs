@@ -33,6 +33,7 @@ public class PlayerControler : MonoBehaviour
             hasPowerup = true;
             Destroy(other.gameObject);
             StartCoroutine(PowerupCountdownRoutine());
+            powerupIndicator.gameObject.SetActive(true);
         }
     }
     private void OnCollisionEnter(Collision collision)
@@ -50,5 +51,6 @@ public class PlayerControler : MonoBehaviour
     {
         yield return new WaitForSeconds(7);
         hasPowerup = false;
+        powerupIndicator.gameObject.SetActive(false);
     }
 }
